@@ -25,3 +25,9 @@ class TicketView(APIView):
         res["data"]=ticket.data
         
         return Response(res)
+
+class TicketDetail(APIView):
+    def get(self,request,pk):
+        ticket=Ticket.objects.get(pk=pk)
+        ticketData=serializers.TicketSerializer(ticket)
+        return Response(ticketData.data)
