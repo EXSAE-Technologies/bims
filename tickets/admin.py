@@ -4,7 +4,7 @@ from tickets.models import Ticket, Bet
 
 @admin.register(Ticket)
 class TicketAdmin(admin.ModelAdmin):
-    pass
+    list_display=["id","bet_type","odds","wager","profit"]
 
 @admin.register(Bet)
 class BetAdmin(admin.ModelAdmin):
